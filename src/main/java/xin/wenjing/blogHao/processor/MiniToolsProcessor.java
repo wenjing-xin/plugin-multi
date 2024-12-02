@@ -10,7 +10,6 @@ import reactor.core.publisher.Mono;
 import run.halo.app.plugin.ReactiveSettingFetcher;
 import run.halo.app.theme.dialect.TemplateHeadProcessor;
 import xin.wenjing.blogHao.entity.Settings;
-import xin.wenjing.blogHao.util.ScriptContentUtils;
 
 /**
  * 小工具脚本注入
@@ -36,10 +35,6 @@ public class MiniToolsProcessor implements TemplateHeadProcessor {
     private String miniToolsScript(Settings.MiniTool miniTool) {
 
         StringBuilder injectCode = new StringBuilder("");
-        // 中英文空格脚本
-        if(miniTool.getContentSpace().isEnableContentSpace()){
-            injectCode.append(ScriptContentUtils.panguScript(miniTool));
-        }
         // 段落内容首行缩进
         if(miniTool.getContentIndent().isEnableContentIndent()){
             injectCode.append("""

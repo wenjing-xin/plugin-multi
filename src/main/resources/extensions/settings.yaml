@@ -191,37 +191,12 @@ spec:
         label: 小工具
         formSchema:
           - $formkit: group
-            name: contentSpace
-            label: 内容的中英文、符号之间自动添加空格
-            value:
-              enableContentSpace: false
-              scanContent:
-            children:
-              - $formkit: radio
-                name: enableContentSpace
-                key: enableContentSpace
-                id: enableContentSpace
-                help: 是否启用
-                value: false
-                options:
-                  - label: 启用
-                    value: true
-                  - label: 禁用
-                    value: false
-              - $formkit: textarea
-                if: $get(enableContentSpace).value
-                label: 内容的中英文、符号之间自动添加空格
-                name: scanContent
-                value: "pangu.spacingElementByTagName('body');"
-                rows: 3
-                help: 写法参考 https://github.com/vinta/pangu.js
-          - $formkit: group
             name: contentIndent
             label: 文本内容首行缩进
             help: 开启后则在段落的首行缩进两个空格
             value:
               enableContentIndent: false
-              indentNodeName:
+              indentNodeName: "#post"
             children:
               - $formkit: radio
                 name: enableContentIndent
@@ -240,38 +215,3 @@ spec:
                 name: indentNodeName
                 value: "#post"
                 help: 根据自己使用的主题选择要适配的内容节点
-          - $formkit: group
-            name: colorless
-            label: 站点失色
-            help: 开启后则会让站点变为灰色
-            value:
-              enableColorless: false
-              colorlessScope: false
-              selfCloseAt:
-            children:
-              - $formkit: radio
-                name: enableColorless
-                key: enableColorless
-                id: enableColorless
-                label: 是否开启
-                value: false
-                options:
-                  - value: true
-                    label: 开启
-                  - value: false
-                    label: 关闭
-              - $formkit: radio
-                name: colorlessScope
-                if: $get(enableColorless).value
-                label: 作用范围
-                value: false
-                options:
-                  - value: true
-                    label: 全站
-                  - value: false
-                    label: 仅首页
-              - $formkit: date
-                name: selfCloseAt
-                if: $get(enableColorless).value
-                label: 到期自动关闭
-

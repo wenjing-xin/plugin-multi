@@ -6,14 +6,14 @@ spec:
   enabled: true
   requires: ">=2.15.0"
   author:
-    name: dreamChaser的小屋
-    website: https://wenjing.xin
+    name: webjing
+    website: https://blog.webjing.cn
   logo: logo.png
   homepage: https://github.com/wenjing-xin/plugin-blog-hao#readme
   repo: https://github.com/wenjing-xin/plugin-blog-hao
   issues: https://github.com/wenjing-xin/plugin-blog-hao/issues
   displayName: "blog-hao"
-  description: "让你的博客变得更好"
+  description: "让你的halo站变得更好"
   license:
     - name: "GPL-3.0"
       url: "https://github.com/wenjing-xin/plugin-blog-hao/blob/main/LICENSE"

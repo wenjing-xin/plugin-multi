@@ -96,43 +96,6 @@ public class ScriptContentUtils {
     }
 
     /**
-     * 内容中英文空格脚本
-     * @param config
-     * @return
-     */
-    public static String panguScript(Settings.MiniTool config) {
-
-        return """
-                <script data-pjax src="/plugins/plugin-blog-hao/assets/static/libs/pangu-4.0.7/pangu.min.js"></script>
-                <script data-pjax type="text/javascript">
-                    %s
-                    document.addEventListener("DOMContentLoaded", function() {
-                       pangu.autoSpacingPage();
-                    })
-                </script>              
-                """.formatted(config.getContentSpace().getScanContent());
-    }
-
-    /**
-     * 站点失色样式
-     * @return
-     */
-    public static String colorlessStyle() {
-        return """
-            <style type="text/css">
-                html {
-                   filter: grayscale(100%);
-                   -webkit-filter: grayscale(100%);
-                   -moz-filter: grayscale(100%);
-                   -ms-filter: grayscale(100%);
-                   -o-filter: grayscale(100%);
-                   -webkit-filter: grayscale(1);
-                }
-            </style>
-            """;
-    }
-
-    /**
      * 自定义标签元素脚本
      * @param version 版本号
      * @return
