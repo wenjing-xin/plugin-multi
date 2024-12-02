@@ -4,7 +4,7 @@ metadata:
   name: plugin-blog-hao
 spec:
   enabled: true
-  requires: ">=2.15.0"
+  requires: ">=2.17.0"
   author:
     name: webjing
     website: https://blog.webjing.cn
